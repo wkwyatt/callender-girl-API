@@ -14,7 +14,7 @@ router.post('/hairUnits/post', postHairUnit)
 /* GET home page. */
 router.get('/hairUnits/get', getHairUnits);
 // * GET for any units * //
-router.get('/get', getAnyUnits);
+router.get('/get', getAnyUnit);
 
 module.exports = router;
 
