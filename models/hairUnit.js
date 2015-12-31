@@ -5,6 +5,7 @@ var hairUnitSchema = new Schema({
 	name: String,
 	image: String,
 	desc: String,
+	color: String,
 	price: Number
 });
 

@@ -1,22 +1,41 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var mongoUrl = 'mongodb://localhost:27017/test'
+// var mongoUrl = 'mongodb://localhost:27017/test'
 
 // ******* Objects used for Schema  ***** //
-var HairUnit = require('../models/hairUnit');
+var HairUnit = require('../models/hairunit');
 
 
 // ***  REST Routing *** //
-mongoose.connect(mongoUrl);
+// mongoose.connect(mongoUrl);
+
+// USER REGISTER
+router.post('/register', registerUser);
+
+// USER LOGIN
+router.post('/login', loginUser);
+
+
+
 // ** POST to API ** //
-router.post('/hairUnits/post', postHairUnit)
+router.post('/hairUnits/post', postHairUnit);
 /* GET home page. */
 router.get('/hairUnits/get', getHairUnits);
 // * GET for any units * //
 router.get('/get', getAnyUnit);
 
+
 module.exports = router;
+
+// ********  Router POST functions ******** //
+function registerUser(req, res, next) {
+
+}
+
+function loginUser(req, res, next) {
+
+}
 
 // ********  Router POST functions ******** //
 function postHairUnit(req, res, post) {
@@ -24,6 +43,7 @@ function postHairUnit(req, res, post) {
 	unit.name = req.body.unitName;
 	unit.image = req.body.unitImage;
 	unit.desc = req.body.unitDesc;
+	unit.color = req.body.unitColor;
 	unit.price = req.body.unitPrice;
 
 	unit.save(function(error) {
@@ -38,8 +58,7 @@ function postHairUnit(req, res, post) {
 
 // ********** Router GET functions ********** //
 function getHairUnits(req, res, next) {
-	var unit = new HairUnit();
-	unit.find(function(error, result) {
+	HairUnit.find(function(error, result) {
 		if(error) {
 			console.log("GET error in getHairUnits - ");
 			console.log(error);
