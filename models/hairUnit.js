@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var hairUnitSchema = new Schema({
+var hairunitschema = new Schema({
 	name: String,
 	image: String,
 	desc: String,
@@ -9,4 +9,4 @@ var hairUnitSchema = new Schema({
 	price: Number
 });
 
-module.exports = mongoose.model('hairUnits', hairUnitSchema);
+module.exports = mongoose.model('hairunits', hairunitschema);

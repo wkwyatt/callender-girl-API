@@ -19,9 +19,9 @@ router.post('/login', loginUser);
 
 
 // ** POST to API ** //
-router.post('/hairUnits/post', postHairUnit);
+router.post('/hairunits/post', postHairUnit);
 /* GET home page. */
-router.get('/hairUnits/get', getHairUnits);
+router.get('/hairunits/get', gethairunits);
 // * GET for any units * //
 router.get('/get', getAnyUnit);
 
@@ -57,10 +57,10 @@ function postHairUnit(req, res, post) {
 }
 
 // ********** Router GET functions ********** //
-function getHairUnits(req, res, next) {
+function gethairunits(req, res, next) {
 	HairUnit.find(function(error, result) {
 		if(error) {
-			console.log("GET error in getHairUnits - ");
+			console.log("GET error in gethairunits - ");
 			console.log(error);
 		} else {
 			res.json(result);
