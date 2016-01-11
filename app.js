@@ -55,7 +55,11 @@ passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
-var mongoUrl = 'mongodb://localhost:27017/test';
+// var mongoUrl = 'mongodb://localhost:27017/test';
+var mongoUrl =
+   process.env.MONGOLAB_URI ||
+   process.env.MONGOHQ_URL ||
+   'mongodb://localhost:27017/test';
 mongoose.connect(mongoUrl);
 
 app.use('/', routes);
