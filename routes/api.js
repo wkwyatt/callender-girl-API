@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 // var mongoUrl = 'mongodb://localhost:27017/test'
 
 // ******* Objects used for Schema  ***** //
-var HairUnit = require('../models/hairUnit');
+var HairUnit = require('../models/hairunit');
 
 
 // ***  REST Routing *** //
