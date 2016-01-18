@@ -4,7 +4,7 @@ Hair Designer API
 ## Summary
 Sample API created using node for a mock hair stylist site.  API uses NodeJS and Express to manage data from MongoDB including information on products for sale. 
 
-## NPM Installs
+## Dependencies
 
 ```javascript
 "dependencies": {
